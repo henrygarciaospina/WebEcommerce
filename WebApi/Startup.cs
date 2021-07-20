@@ -45,7 +45,7 @@ namespace WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMiddleware<ExceptionMiddleware>();
+          //  app.UseMiddleware<ExceptionMiddleware>();
 
 
             app.UseStatusCodePagesWithReExecute("/errors", "?code={0}");

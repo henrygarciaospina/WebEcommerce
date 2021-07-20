@@ -26,12 +26,13 @@ namespace WebApi.Controllers
 
         //http://localhost:20122/api/producto
         [HttpGet]
-        public async Task<ActionResult<List<Producto>>> GetProductos()
+        public async Task<ActionResult<List<Producto>>> GetProductos(string sort)
         {
-            var spec = new ProductoWithCategoriaAndMarcaSpecification();
+            var spec = new ProductoWithCategoriaAndMarcaSpecification(sort);
+
             var productos = await _productoRepository.GetAllWithSpec(spec);
 
-            return Ok(value: _mapper.Map<IReadOnlyList<Producto>, IReadOnlyList<ProductoDto>>(productos));
+            return Ok(_mapper.Map<IReadOnlyList<Producto>, IReadOnlyList<ProductoDto>>(productos));
         }
 
         //http://localhost:20122/api/producto/1

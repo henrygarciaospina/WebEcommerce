@@ -1,21 +1,50 @@
 ﻿using Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Specifications
 {
     public class ProductoWithCategoriaAndMarcaSpecification : BaseSpecification<Producto>
     {
-        public ProductoWithCategoriaAndMarcaSpecification() 
+        public ProductoWithCategoriaAndMarcaSpecification(string sort)
         {
             AddInclude(p => p.Categoria);
             AddInclude(P => P.Marca);
+
+            if (!string.IsNullOrEmpty(sort))
+            {
+                switch (sort)
+                {
+                    case "NombreAsc":
+                        AddOrderBy(p => p.Nombre);
+                        break;
+                    case "NombreDesc":
+                        AddOrderByDescending(p => p.Nombre);
+                        break;
+                    case "precioAsc":
+                        AddOrderBy(p => p.Precio);
+                        break;
+                    case "precioDesc":
+                        AddOrderByDescending(p => p.Precio);
+                        break;
+                    case "descripcionAsc":
+                        AddOrderBy(p => p.Descripcion);
+                        break;
+                    case "descripcionDesc":
+                        AddOrderByDescending(p => p.Descripcion);
+                        break;
+                    case "stockAsc":
+                        AddOrderBy(p => p.Stock);
+                        break;
+                    case "stockDesc":
+                        AddOrderByDescending(p => p.Stock);
+                        break;
+                    default:
+                        AddOrderBy(p => p.Nombre);
+                        break;
+                }
+            }
         }
 
-         public ProductoWithCategoriaAndMarcaSpecification(int id) : base(p => p.Id == id)
+        public ProductoWithCategoriaAndMarcaSpecification(int id) : base(p => p.Id == id)
         {
             AddInclude(p => p.Categoria);
             AddInclude(P => P.Marca);
