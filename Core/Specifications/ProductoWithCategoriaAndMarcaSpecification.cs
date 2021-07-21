@@ -4,16 +4,21 @@ namespace Core.Specifications
 {
     public class ProductoWithCategoriaAndMarcaSpecification : BaseSpecification<Producto>
     {
-        public ProductoWithCategoriaAndMarcaSpecification(string sort, int? marca, int? categoria)
-            : base(x => (!marca.HasValue || x.MarcaId == marca) &&
-            (!categoria.HasValue || x.CategoriaId == categoria))
+        public ProductoWithCategoriaAndMarcaSpecification(ProductoSpecificationParams productoParams)
+            : base(x => (!productoParams.Marca.HasValue || x.MarcaId == productoParams.Marca) &&
+                        (!productoParams.Categoria.HasValue || x.CategoriaId == productoParams.Categoria))
         {
             AddInclude(p => p.Categoria);
             AddInclude(P => P.Marca);
 
-            if (!string.IsNullOrEmpty(sort))
+            /*ApplyPaging(0 ,2) ==> desde la posición 0 toma 2 registros
+             * http://localhost:20122/api/producto?pageIndex=1&pageSize=2
+             */
+            ApplyPaging(productoParams.PageSize * (productoParams.PageIndex - 1), productoParams.PageSize);
+
+            if (!string.IsNullOrEmpty(productoParams.Sort))
             {
-                switch (sort)
+                switch (productoParams.Sort)
                 {
                     case "NombreAsc":
                         AddOrderBy(p => p.Nombre);
@@ -45,7 +50,6 @@ namespace Core.Specifications
                 }
             }
         }
-
         public ProductoWithCategoriaAndMarcaSpecification(int id) : base(p => p.Id == id)
         {
             AddInclude(p => p.Categoria);
