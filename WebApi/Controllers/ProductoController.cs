@@ -19,7 +19,7 @@ namespace WebApi.Controllers
         private readonly IGenericRepository<Producto> _productoRepository;
         private readonly IMapper _mapper;
 
-        public ProductoController(IGenericRepository<Producto> productoRepository, IMapper mapper) 
+        public ProductoController(IGenericRepository<Producto> productoRepository, IMapper mapper)
         {
             _productoRepository = productoRepository;
             _mapper = mapper;
@@ -54,7 +54,7 @@ namespace WebApi.Controllers
 
         //http://localhost:20122/api/producto/1
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProductoDto>> GetProducto(int id) 
+        public async Task<ActionResult<ProductoDto>> GetProducto(int id)
         {
             /* 
              spec = Debe incluir la lógica de la condición de la consulta y también las relaciones
@@ -68,7 +68,33 @@ namespace WebApi.Controllers
                 return NotFound(new CodeErrorResponse(404, $"El producto de Id {id} no existe"));
             }
 
-            return _mapper.Map<Producto,ProductoDto>(producto);
+            return _mapper.Map<Producto, ProductoDto>(producto);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Producto>> Post(Producto producto)
+        {
+            var resultado = await _productoRepository.Add(producto);
+            if (resultado == 0)
+            {
+                throw new Exception("No se pudo insertar el producto");
+            }
+
+            return Ok(producto);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Producto>> Put(int id,  Producto producto)
+        {
+            producto.Id = id;
+            var resultado = await _productoRepository.Update(producto);
+            if (resultado == 0)
+            {
+                throw new Exception("No se pudo actualizar el producto");
+            }
+
+            return Ok(producto);
+
         }
     }
 }
