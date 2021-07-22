@@ -71,3 +71,8 @@ C:\NetMarket\NetMarket\WebApi\obj\Debug\net5.0\WebApi.dll
 C:\NetMarket\NetMarket\WebApi\obj\Debug\net5.0\ref\WebApi.dll
 C:\NetMarket\NetMarket\WebApi\obj\Debug\net5.0\WebApi.pdb
 C:\NetMarket\NetMarket\WebApi\obj\Debug\net5.0\WebApi.genruntimeconfig.cache
+C:\NetMarket\NetMarket\WebApi\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\NetMarket\NetMarket\WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\NetMarket\NetMarket\WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\NetMarket\NetMarket\WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\NetMarket\NetMarket\WebApi\obj\Debug\net5.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
