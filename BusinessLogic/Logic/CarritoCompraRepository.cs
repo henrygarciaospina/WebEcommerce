@@ -10,7 +10,7 @@ namespace BusinessLogic.Logic
 {
     public class CarritoCompraRepository : ICarritoCompraRepository
     {
-        public Task<CarritoCompra> DeletetCarritoCompraAsync(string carritoId)
+        public Task<bool> DeletetCarritoCompraAsync(string carritoId)
         {
             throw new NotImplementedException();
         }
