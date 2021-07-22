@@ -34,10 +34,13 @@ namespace WebApi
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
             services.AddTransient<IProductoRepository, ProductoRepository>();
 
             services.AddControllers();
 
+            services.AddScoped<ICarritoCompraRepository, CarritoCompraRepository>();
+            
             services.AddCors(opt =>
             {
                 opt.AddPolicy("CorsRule", rule =>
