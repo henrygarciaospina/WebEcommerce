@@ -11,6 +11,7 @@ namespace WebApi.Middleware
 {
     public class ExceptionMiddleware
     {
+
         private readonly RequestDelegate _next;
         private readonly ILogger<ExceptionMiddleware> _logger;
         private readonly IHostEnvironment _env;
@@ -22,7 +23,7 @@ namespace WebApi.Middleware
             _env = env;
         }
 
-        public async Task InvoqueAsync(HttpContext context) 
+        public async Task InvokeAsync(HttpContext context)
         {
             try
             {
@@ -43,7 +44,9 @@ namespace WebApi.Middleware
                 var json = JsonSerializer.Serialize(response, options);
 
                 await context.Response.WriteAsync(json);
+
             }
+
         }
 
     }
