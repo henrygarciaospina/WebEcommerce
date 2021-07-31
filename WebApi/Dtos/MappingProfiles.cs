@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Core.Entities;
+using Entities;
 
 namespace WebApi.Dtos
 {
@@ -7,9 +7,9 @@ namespace WebApi.Dtos
     {
         public MappingProfiles() 
         {
-            CreateMap<Producto, ProductoDto>()
-                .ForMember(pd => pd.CategoriaNombre, f => f.MapFrom(pr => pr.Categoria.Nombre))
-                .ForMember(pd => pd.MarcaNombre, f => f.MapFrom(pr => pr.Marca.Nombre));
+            CreateMap<Product, ProductDto>()
+                .ForMember(pd => pd.CategoryName, f => f.MapFrom(pr => pr.Category.Name))
+                .ForMember(pd => pd.MarkName, f => f.MapFrom(pr => pr.Mark.Name));
         }
     }
 }

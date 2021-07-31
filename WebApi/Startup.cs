@@ -1,6 +1,6 @@
-using BusinessLogic.Data;
-using BusinessLogic.Logic;
-using Core.Interfaces;
+using DataAccess;
+using DataAccess.Implementations;
+using DataAccess.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -35,11 +35,9 @@ namespace WebApi
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddTransient<IProductoRepository, ProductoRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
 
             services.AddControllers();
-
-            services.AddScoped<ICarritoCompraRepository, CarritoCompraRepository>();
             
             services.AddCors(opt =>
             {
