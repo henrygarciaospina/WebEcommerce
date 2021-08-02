@@ -35,7 +35,7 @@ namespace WebApi
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddTransient<IProductRepository, ProductRepository>();
+            //services.AddTransient<IProductRepository, ProductRepository>();
 
             services.AddControllers();
             
@@ -77,8 +77,6 @@ namespace WebApi
             {
                 endpoints.MapControllers();
             });
-
-
         }
     }
 }
