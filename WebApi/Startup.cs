@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Services.Implementations.Products;
+using Services.Interfaces;
 using WebApi.Dtos;
 using WebApi.Middleware;
 
@@ -28,14 +30,13 @@ namespace WebApi
 
             services.AddAutoMapper(typeof(MappingProfiles));
 
-            services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
+             services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
+             services.AddTransient<ProductService, ProductService>();
 
             services.AddDbContext<MarketDbContext>(opt =>
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
-
-            //services.AddTransient<IProductRepository, ProductRepository>();
 
             services.AddControllers();
             

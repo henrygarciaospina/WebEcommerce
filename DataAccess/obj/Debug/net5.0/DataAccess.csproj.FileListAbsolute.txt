@@ -1,4 +1,6 @@
 C:\NetMarket\NetMarket\DataAccess\bin\Debug\net5.0\DataAccess.deps.json
+C:\NetMarket\NetMarket\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.json
+C:\NetMarket\NetMarket\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.dev.json
 C:\NetMarket\NetMarket\DataAccess\bin\Debug\net5.0\DataAccess.dll
 C:\NetMarket\NetMarket\DataAccess\bin\Debug\net5.0\ref\DataAccess.dll
 C:\NetMarket\NetMarket\DataAccess\bin\Debug\net5.0\DataAccess.pdb
@@ -13,6 +15,4 @@ C:\NetMarket\NetMarket\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CopyComplet
 C:\NetMarket\NetMarket\DataAccess\obj\Debug\net5.0\DataAccess.dll
 C:\NetMarket\NetMarket\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
 C:\NetMarket\NetMarket\DataAccess\obj\Debug\net5.0\DataAccess.pdb
-C:\NetMarket\NetMarket\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.json
-C:\NetMarket\NetMarket\DataAccess\bin\Debug\net5.0\DataAccess.runtimeconfig.dev.json
 C:\NetMarket\NetMarket\DataAccess\obj\Debug\net5.0\DataAccess.genruntimeconfig.cache

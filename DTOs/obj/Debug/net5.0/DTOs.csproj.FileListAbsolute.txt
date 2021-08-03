@@ -1,0 +1,15 @@
+C:\NetMarket\NetMarket\DTOs\bin\Debug\net5.0\DTOs.deps.json
+C:\NetMarket\NetMarket\DTOs\bin\Debug\net5.0\DTOs.dll
+C:\NetMarket\NetMarket\DTOs\bin\Debug\net5.0\ref\DTOs.dll
+C:\NetMarket\NetMarket\DTOs\bin\Debug\net5.0\DTOs.pdb
+C:\NetMarket\NetMarket\DTOs\bin\Debug\net5.0\Entities.dll
+C:\NetMarket\NetMarket\DTOs\bin\Debug\net5.0\Entities.pdb
+C:\NetMarket\NetMarket\DTOs\obj\Debug\net5.0\DTOs.csproj.AssemblyReference.cache
+C:\NetMarket\NetMarket\DTOs\obj\Debug\net5.0\DTOs.GeneratedMSBuildEditorConfig.editorconfig
+C:\NetMarket\NetMarket\DTOs\obj\Debug\net5.0\DTOs.AssemblyInfoInputs.cache
+C:\NetMarket\NetMarket\DTOs\obj\Debug\net5.0\DTOs.AssemblyInfo.cs
+C:\NetMarket\NetMarket\DTOs\obj\Debug\net5.0\DTOs.csproj.CoreCompileInputs.cache
+C:\NetMarket\NetMarket\DTOs\obj\Debug\net5.0\DTOs.csproj.CopyComplete
+C:\NetMarket\NetMarket\DTOs\obj\Debug\net5.0\DTOs.dll
+C:\NetMarket\NetMarket\DTOs\obj\Debug\net5.0\ref\DTOs.dll
+C:\NetMarket\NetMarket\DTOs\obj\Debug\net5.0\DTOs.pdb

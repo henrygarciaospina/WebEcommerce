@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{07348869-EB39-4DA4-BF41-339717186C35}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOs", "DTOs\DTOs.csproj", "{749565DF-6401-4F88-BDFB-73D240715C56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{07348869-EB39-4DA4-BF41-339717186C35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07348869-EB39-4DA4-BF41-339717186C35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07348869-EB39-4DA4-BF41-339717186C35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{749565DF-6401-4F88-BDFB-73D240715C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{749565DF-6401-4F88-BDFB-73D240715C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{749565DF-6401-4F88-BDFB-73D240715C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{749565DF-6401-4F88-BDFB-73D240715C56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

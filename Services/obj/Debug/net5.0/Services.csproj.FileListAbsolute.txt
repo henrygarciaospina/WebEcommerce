@@ -3,8 +3,10 @@ C:\NetMarket\NetMarket\Services\bin\Debug\net5.0\Services.dll
 C:\NetMarket\NetMarket\Services\bin\Debug\net5.0\ref\Services.dll
 C:\NetMarket\NetMarket\Services\bin\Debug\net5.0\Services.pdb
 C:\NetMarket\NetMarket\Services\bin\Debug\net5.0\DataAccess.dll
+C:\NetMarket\NetMarket\Services\bin\Debug\net5.0\DTOs.dll
 C:\NetMarket\NetMarket\Services\bin\Debug\net5.0\Entities.dll
 C:\NetMarket\NetMarket\Services\bin\Debug\net5.0\DataAccess.pdb
+C:\NetMarket\NetMarket\Services\bin\Debug\net5.0\DTOs.pdb
 C:\NetMarket\NetMarket\Services\bin\Debug\net5.0\Entities.pdb
 C:\NetMarket\NetMarket\Services\obj\Debug\net5.0\Services.csproj.AssemblyReference.cache
 C:\NetMarket\NetMarket\Services\obj\Debug\net5.0\Services.GeneratedMSBuildEditorConfig.editorconfig

@@ -1481,6 +1481,18 @@
           "DataAccess.dll": {}
         }
       },
+      "DTOs/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "10.1.1",
+          "Entities": "1.0.0"
+        },
+        "runtime": {
+          "DTOs.dll": {}
+        },
+        "compile": {
+          "DTOs.dll": {}
+        }
+      },
       "Entities/1.0.0": {
         "runtime": {
           "Entities.dll": {}
@@ -1491,6 +1503,8 @@
       },
       "Services/1.0.0": {
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
+          "DTOs": "1.0.0",
           "DataAccess": "1.0.0"
         },
         "runtime": {
@@ -3934,6 +3948,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DTOs/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

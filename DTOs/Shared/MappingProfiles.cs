@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DTOs.Products;
 using Entities;
 
 namespace WebApi.Dtos
