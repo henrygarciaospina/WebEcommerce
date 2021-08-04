@@ -3,7 +3,7 @@ using DTOs.Products;
 using DTOs.Shared;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
-using Services.Implementations.Products;
+using Services.Interfaces;
 using System;
 using System.Threading.Tasks;
 using WebApi.Errors;
@@ -13,9 +13,9 @@ namespace WebApi.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly ProductService _productService;
+        private readonly IProductService _productService;
 
-        public ProductController(ProductService productService)
+        public ProductController(IProductService productService)
         {
             _productService = productService;
                 

@@ -31,7 +31,9 @@ namespace WebApi
             services.AddAutoMapper(typeof(MappingProfiles));
 
              services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
-             services.AddTransient<ProductService, ProductService>();
+            
+            // Inyection service
+             services.AddTransient<IProductService, ProductService>();
 
             services.AddDbContext<MarketDbContext>(opt =>
             {

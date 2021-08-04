@@ -54,7 +54,6 @@ namespace DataAccess.Specifications
             }
         }
 
-
         public ProductWithCategoryaAndMarkSpecification(int id) : base(x => x.Id == id)
         {
             AddInclude(p => p.Category);
