@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 using Services.Implementations.Categories;
 using Services.Implementations.Marks;
 using Services.Implementations.Products;
@@ -28,7 +29,10 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             // Register the Swagger generator, defining 1 or more Swagger documents
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API NetMarket", Version = "v1" });
+            });
 
             services.AddAutoMapper(typeof(MappingProfiles));
 
@@ -66,7 +70,7 @@ namespace WebApi
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "NetMarket API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API NetMarket V1");
                 c.RoutePrefix = string.Empty;
             });
 
