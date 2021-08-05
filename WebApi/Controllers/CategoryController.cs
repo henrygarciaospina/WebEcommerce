@@ -1,8 +1,10 @@
 ﻿using DataAccess.Interfaces;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
+using Services.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using WebApi.Errors;
 
 namespace WebApi.Controllers
 {
@@ -10,23 +12,37 @@ namespace WebApi.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly IGenericRepository<Category> _categoryRepository;
+        private readonly ICategoryService _categoryService;
 
-        public CategoryController(IGenericRepository<Category> categoryRepository)
+        public CategoryController(ICategoryService categoryService)
         {
-            _categoryRepository = categoryRepository;
+            _categoryService = categoryService;
         }
 
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<Category>>> GetCategoryaAll() 
         {
-            return Ok(await _categoryRepository.GetAllAsync());
+            var categories = await _categoryService.GetAll();
+            
+            if (categories == null)
+            {
+                return NotFound(new CodeErrorResponse(404, $"Aún no hay categorias registrados"));
+            }
+
+            return Ok(categories);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Category>> GetCategoryById(int id)
         {
-            return await _categoryRepository.GetByIdAsync(id);
+            var category = await _categoryService.Get(id);
+
+            if (category == null)
+            {
+                return NotFound(new CodeErrorResponse(404, $"La categoria de Id {id} no existe"));
+            }
+
+            return category;
         }
     }
 }

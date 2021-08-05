@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Services.Implementations.Categories;
 using Services.Implementations.Products;
 using Services.Interfaces;
 using WebApi.Dtos;
@@ -34,6 +35,7 @@ namespace WebApi
             
             // Inyection service
              services.AddTransient<IProductService, ProductService>();
+             services.AddTransient<ICategoryService, CategoryService>();
 
             services.AddDbContext<MarketDbContext>(opt =>
             {

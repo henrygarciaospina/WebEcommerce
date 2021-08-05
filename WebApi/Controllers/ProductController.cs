@@ -25,14 +25,14 @@ namespace WebApi.Controllers
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductDto>>> GetProducts([FromQuery] ProductSpecificationParams productParams)
         {
-            var product = await _productService.GetAll(productParams);
+            var products = await _productService.GetAll(productParams);
 
-            if (product == null)
+            if (products == null)
             {
                 return NotFound(new CodeErrorResponse(404, $"Aún no hay productos registrados"));
             }
 
-            return Ok(product);
+            return Ok(products);
         }
 
         //http://localhost:20122/api/product/1

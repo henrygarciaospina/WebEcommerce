@@ -53,6 +53,8 @@ namespace Services.Implementations.Products
             entre las entidades, entre Producto y Marca, Categoría. 
             */
             var productDto = new ProductDto();
+            productDto = null;
+
             var spec = new ProductWithCategoryaAndMarkSpecification(id);
             var product = await _productRepository.GetByIdWithSpec(spec);
 
@@ -67,6 +69,7 @@ namespace Services.Implementations.Products
         public async Task<Product> Post(Product product)
         {
             var result = await _productRepository.Add(product);
+            
             if (result == 0)
             {
                 product = null;
@@ -78,6 +81,7 @@ namespace Services.Implementations.Products
         {
             product.Id = id;
             var result = await _productRepository.Update(product);
+            
             if (result == 0)
             {
                 product = null;
