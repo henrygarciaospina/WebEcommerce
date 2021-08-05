@@ -1,8 +1,10 @@
 ﻿using DataAccess.Interfaces;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
+using Services.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using WebApi.Errors;
 
 namespace WebApi.Controllers
 {
@@ -10,23 +12,37 @@ namespace WebApi.Controllers
     [ApiController]
     public class MarkController : ControllerBase
     {
-        private readonly IGenericRepository<Mark> _markRepository;
+        private readonly IMarkService _markService;
 
-        public MarkController(IGenericRepository<Mark> markRepository)
+        public MarkController(IMarkService markService)
         {
-            _markRepository = markRepository;
+            _markService = markService;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<Mark>>> GetMarkAll()
+        public async Task<ActionResult<IReadOnlyList<Mark>>> GetMarkAll() 
         {
-            return Ok(await _markRepository.GetAllAsync());
+            var marks = await _markService.GetAll();
+            
+            if (marks == null)
+            {
+                return NotFound(new CodeErrorResponse(404, $"Aún no hay marcas registradas"));
+            }
+
+            return Ok(marks);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Mark>> GetMarkById(int id)
         {
-            return await _markRepository.GetByIdAsync(id);
+            var mark = await _markService.Get(id);
+
+            if (mark == null)
+            {
+                return NotFound(new CodeErrorResponse(404, $"La marca de Id {id} no existe"));
+            }
+
+            return mark;
         }
     }
 }

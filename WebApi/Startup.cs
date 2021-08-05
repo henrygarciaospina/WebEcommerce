@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Services.Implementations.Categories;
+using Services.Implementations.Marks;
 using Services.Implementations.Products;
 using Services.Interfaces;
 using WebApi.Dtos;
@@ -31,11 +32,12 @@ namespace WebApi
 
             services.AddAutoMapper(typeof(MappingProfiles));
 
-             services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
-            
+            services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
+
             // Inyection service
-             services.AddTransient<IProductService, ProductService>();
-             services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IMarkService, MarkService>();
 
             services.AddDbContext<MarketDbContext>(opt =>
             {
@@ -43,7 +45,7 @@ namespace WebApi
             });
 
             services.AddControllers();
-            
+
             services.AddCors(opt =>
             {
                 opt.AddPolicy("CorsRule", rule =>
